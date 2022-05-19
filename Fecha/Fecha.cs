@@ -9,9 +9,49 @@ namespace Fecha
     public class Fecha
     {
         // ################################### JMR2122 #####################################
-        public int mDia;
-        public int mMes;
-        public int mAnyo;
+        private int mDia;
+        private int mMes;
+        private int mAnyo;
+
+        public int MDia
+        {
+            get
+            {
+                return mDia;
+            }
+
+            set
+            {
+                mDia = value;
+            }
+        }
+
+        public int MMes
+        {
+            get
+            {
+                return mMes;
+            }
+
+            set
+            {
+                mMes = value;
+            }
+        }
+
+        public int MAnyo
+        {
+            get
+            {
+                return mAnyo;
+            }
+
+            set
+            {
+                mAnyo = value;
+            }
+        }
+
         //TODO validar los valores introducidos
         /// <summary>
         /// Constructor de Fecha sin parámetros
@@ -19,9 +59,9 @@ namespace Fecha
         /// </summary>
         public Fecha()
         {
-            mDia = 1;
-            mMes = 1;
-            mAnyo = 1;
+            MDia = 1;
+            MMes = 1;
+            MAnyo = 1;
         }
         /// <summary>
         /// Constructor de Fecha con 3 parámetros
@@ -36,22 +76,22 @@ namespace Fecha
         {
             if (anyo >= 1 && anyo <= 2500)
             {
-                this.mAnyo = anyo;
+                this.MAnyo = anyo;
             }
             else
             {
-                this.mAnyo = 1;
+                this.MAnyo = 1;
             }
             bool bisiesto;
-            if ((mAnyo % 400 == 0) || ((mAnyo % 4 == 0) && (mAnyo % 100 != 0)))
+            if ((MAnyo % 400 == 0) || ((MAnyo % 4 == 0) && (MAnyo % 100 != 0)))
                 bisiesto = true;
             else bisiesto = false;
             if (mes >= 1 && mes <= 12)
-                this.mMes = mes;
+                this.MMes = mes;
             else
-                this.mMes = 1;
+                this.MMes = 1;
             int diasMes = 0;
-            switch (mMes)
+            switch (MMes)
             {
                 case 1:
                 case 3:
@@ -75,15 +115,15 @@ namespace Fecha
                     break;
             }
             if (dia >= 1 && dia <= diasMes)
-                this.mDia = dia;
+                this.MDia = dia;
             else
-                this.mDia = 1;
+                this.MDia = 1;
         }
         //################################ JMR2122 ##########################################
         public bool EsBisiesto()
         {
             bool bisiesto = false;
-            if ((mAnyo % 400 == 0) || ((mAnyo % 4 == 0) && (mAnyo % 100 != 0)))
+            if ((MAnyo % 400 == 0) || ((MAnyo % 4 == 0) && (MAnyo % 100 != 0)))
                 bisiesto = true;
             else bisiesto = false;
             return bisiesto;
@@ -95,7 +135,7 @@ namespace Fecha
         /// <returns>un string con la fecha en formato dia/mes/anyo</returns> 
         public override string ToString()
         {
-            return mDia + "/" + mMes + "/" + mAnyo;
+            return MDia + "/" + MMes + "/" + MAnyo;
         }
     }
 }
