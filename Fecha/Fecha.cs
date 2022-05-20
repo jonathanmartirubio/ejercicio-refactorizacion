@@ -75,19 +75,14 @@ namespace Fecha
         // ########################################### JMR2122 ##############################
         public Fecha(int mes, int anyo, int dia)
         {
-            if (anyo >= 1 && anyo <= 2500)
-            {
-                this.MAnyo = anyo;
-            }
-            else
-            {
-                this.MAnyo = 1;
-            }
             // ################## JMR2122 ####################
-            if (mes >= 1 && mes <= 12)
-                this.MMes = mes;
-            else
-                this.MMes = 1;
+            IntroducirYVerificarAnyo(anyo);
+            IntroducirYVerificarMes(mes);
+            IntroducirYVerificarDia(dia);
+        }
+
+        private void IntroducirYVerificarDia(int dia)
+        {
             int diasMes = 0;
             switch (MMes)
             {
@@ -113,10 +108,31 @@ namespace Fecha
                     break;
             }
             if (dia >= 1 && dia <= diasMes)
-                this.MDia = dia;
+                MDia = dia;
             else
-                this.MDia = 1;
+                MDia = 1;
         }
+
+        private void IntroducirYVerificarMes(int mes)
+        {
+            if (mes >= 1 && mes <= 12)
+                MMes = mes;
+            else
+                MMes = 1;
+        }
+
+        private void IntroducirYVerificarAnyo(int anyo)
+        {
+            if (anyo >= 1 && anyo <= 2500)
+            {
+                MAnyo = anyo;
+            }
+            else
+            {
+                MAnyo = 1;
+            }
+        }
+
         //################################ JMR2122 ##########################################
         public bool EsBisiesto()
         {
