@@ -25,7 +25,7 @@ namespace Fecha
                 mDia = value;
             }
         }
-
+        // ########################### JMR2122 #############################################
         public int MMes
         {
             get
@@ -38,7 +38,7 @@ namespace Fecha
                 mMes = value;
             }
         }
-
+        // ####################### JMR2122 ###################################
         public int MAnyo
         {
             get
@@ -57,6 +57,7 @@ namespace Fecha
         /// Constructor de Fecha sin parámetros
         /// Se establecen los valores a 1
         /// </summary>
+        // ######################### JMR2122 ##########################
         public Fecha()
         {
             MDia = 1;
@@ -70,9 +71,9 @@ namespace Fecha
         /// <param name="mes">Mes</param>
         /// <param name="anyo">Anyo (entre 1 y 2500)</param>
         /// <param name="dia">Dia</param>
-        /// <param name="bi">Indica si es bisiesto</param>
+        /// 
         // ########################################### JMR2122 ##############################
-        public Fecha(int mes, int anyo, int dia, bool bi)
+        public Fecha(int mes, int anyo, int dia)
         {
             if (anyo >= 1 && anyo <= 2500)
             {
@@ -133,6 +134,7 @@ namespace Fecha
         /// </summary>
         /// <remarks> la palabra clave override indica que se sobreescribe el metodo ToString</remarks>
         /// <returns>un string con la fecha en formato dia/mes/anyo</returns> 
+        // ################### JMR2122 #################################
         public override string ToString()
         {
             return MDia + "/" + MMes + "/" + MAnyo;
