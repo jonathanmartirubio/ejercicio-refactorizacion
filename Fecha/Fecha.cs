@@ -52,7 +52,7 @@ namespace Fecha
             }
         }
 
-        //TODO validar los valores introducidos
+
         /// <summary>
         /// Constructor de Fecha sin parámetros
         /// Se establecen los valores a 1
@@ -101,7 +101,7 @@ namespace Fecha
                 case 11:
                     diasMes = 30;
                     break;
-                case 2: // verificación de año bisiesto
+                case 2: 
                     if (EsBisiesto())
                         diasMes = 29;
                     else diasMes = 28;
