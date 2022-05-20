@@ -22,7 +22,7 @@ namespace Fecha
 
             set
             {
-                mDia = value;
+                IntroducirYVerificarDia(value);
             }
         }
         // ########################### JMR2122 #############################################
@@ -35,7 +35,7 @@ namespace Fecha
 
             set
             {
-                mMes = value;
+                IntroducirYVerificarMes(value);
             }
         }
         // ####################### JMR2122 ###################################
@@ -48,7 +48,7 @@ namespace Fecha
 
             set
             {
-                mAnyo = value;
+                IntroducirYVerificarAnyo(value);
             }
         }
 
@@ -108,28 +108,28 @@ namespace Fecha
                     break;
             }
             if (dia >= 1 && dia <= diasMes)
-                MDia = dia;
+                mDia = dia;
             else
-                MDia = 1;
+                mDia = 1;
         }
 
         private void IntroducirYVerificarMes(int mes)
         {
             if (mes >= 1 && mes <= 12)
-                MMes = mes;
+                mMes = mes;
             else
-                MMes = 1;
+                mMes = 1;
         }
 
         private void IntroducirYVerificarAnyo(int anyo)
         {
             if (anyo >= 1 && anyo <= 2500)
             {
-                MAnyo = anyo;
+                mAnyo = anyo;
             }
             else
             {
-                MAnyo = 1;
+                mAnyo = 1;
             }
         }
 
