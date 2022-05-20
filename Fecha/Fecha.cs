@@ -52,7 +52,6 @@ namespace Fecha
             }
         }
 
-
         /// <summary>
         /// Constructor de Fecha sin parámetros
         /// Se establecen los valores a 1
