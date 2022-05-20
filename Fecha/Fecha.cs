@@ -83,10 +83,7 @@ namespace Fecha
             {
                 this.MAnyo = 1;
             }
-            bool bisiesto;
-            if ((MAnyo % 400 == 0) || ((MAnyo % 4 == 0) && (MAnyo % 100 != 0)))
-                bisiesto = true;
-            else bisiesto = false;
+            // ################## JMR2122 ####################
             if (mes >= 1 && mes <= 12)
                 this.MMes = mes;
             else
@@ -110,7 +107,7 @@ namespace Fecha
                     diasMes = 30;
                     break;
                 case 2: // verificación de año bisiesto
-                    if (bisiesto)
+                    if (EsBisiesto())
                         diasMes = 29;
                     else diasMes = 28;
                     break;
