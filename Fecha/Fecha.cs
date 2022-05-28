@@ -19,11 +19,6 @@ namespace Fecha
             {
                 return mDia;
             }
-
-            set
-            {
-                mDia = value;
-            }
         }
         // ########################### JMR2122 #############################################
         public int MMes
@@ -32,11 +27,6 @@ namespace Fecha
             {
                 return mMes;
             }
-
-            set
-            {
-                mMes = value;
-            }
         }
         // ####################### JMR2122 ###################################
         public int MAnyo
@@ -44,11 +34,6 @@ namespace Fecha
             get
             {
                 return mAnyo;
-            }
-
-            set
-            {
-                mAnyo = value;
             }
         }
 
@@ -60,9 +45,9 @@ namespace Fecha
         // ######################### JMR2122 ##########################
         public Fecha()
         {
-            MDia = 1;
-            MMes = 1;
-            MAnyo = 1;
+            mDia = 1;
+            mMes = 1;
+            mAnyo = 1;
         }
         /// <summary>
         /// Constructor de Fecha con 3 parámetros
@@ -75,21 +60,29 @@ namespace Fecha
         // ########################################### JMR2122 ##############################
         public Fecha(int mes, int anyo, int dia)
         {
+            SetFecha(mes, anyo, dia);
+        }
+
+        public void SetFecha(int mes, int anyo, int dia)
+        {
             if (anyo >= 1 && anyo <= 2500)
             {
-                this.MAnyo = anyo;
+                mAnyo = anyo;
             }
             else
             {
-                this.MAnyo = 1;
+                throw new ArgumentOutOfRangeException("Año");
             }
             // ################## JMR2122 ####################
             if (mes >= 1 && mes <= 12)
-                this.MMes = mes;
+                mMes = mes;
             else
-                this.MMes = 1;
+            {
+                throw new ArgumentOutOfRangeException("Mes");
+            }
+
             int diasMes = 0;
-            switch (MMes)
+            switch (mMes)
             {
                 case 1:
                 case 3:
@@ -113,10 +106,13 @@ namespace Fecha
                     break;
             }
             if (dia >= 1 && dia <= diasMes)
-                this.MDia = dia;
+                mDia = dia;
             else
-                this.MDia = 1;
+            {
+                throw new ArgumentOutOfRangeException("Día");
+            }
         }
+
         //################################ JMR2122 ##########################################
         public bool EsBisiesto()
         {
