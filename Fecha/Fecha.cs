@@ -37,7 +37,6 @@ namespace Fecha
             }
         }
 
-        //TODO validar los valores introducidos
         /// <summary>
         /// Constructor de Fecha sin parámetros
         /// Se establecen los valores a 1
@@ -51,7 +50,7 @@ namespace Fecha
         }
         /// <summary>
         /// Constructor de Fecha con 3 parámetros
-        /// Si algún parámetro no es correcto se establece a 1
+        /// Si algún parámetro introducido no es correcto lanzará una excepción OutOfRangeException
         /// </summary>
         /// <param name="mes">Mes</param>
         /// <param name="anyo">Anyo (entre 1 y 2500)</param>
@@ -99,7 +98,7 @@ namespace Fecha
                 case 11:
                     diasMes = 30;
                     break;
-                case 2: // verificación de año bisiesto
+                case 2:
                     if (EsBisiesto())
                         diasMes = 29;
                     else diasMes = 28;
