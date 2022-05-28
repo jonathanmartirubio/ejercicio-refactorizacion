@@ -36,9 +36,7 @@ namespace Fecha
                 Console.WriteLine("Fecha Incorrecta: " + e.Message.ToString());
             }
             //Fecha con asignación incorrecta de valores erroneos
-            Fecha fecha4 = new Fecha(); //fecha4.MDia = 67;
-            //fecha4.MMes = 80;
-            //fecha4.MAnyo = 3678;
+            Fecha fecha4 = new Fecha();
             try
             {
                 fecha4.SetFecha(80, 3678, 67);
@@ -47,7 +45,6 @@ namespace Fecha
             {
                 Console.WriteLine("Fecha Incorrecta: " + e.Message.ToString());
             }
-            //MAL!!
         }
     }
 }
